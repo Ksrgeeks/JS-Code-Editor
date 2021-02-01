@@ -1,0 +1,61 @@
+body{
+	color : #2E2E2E ;
+	font : 15px ;
+	font-family : verdana ;
+	background : #F6B26B;
+}
+.coding {
+	background : white  ;
+	font : 15px solid ;
+	color:green  ;
+	outline : 3px solid white;
+	height : 250px ;
+	overflow : scroll;
+	padding : 5px 10px ;
+}
+
+.inlinecoding {
+	background : white  ;
+	font : 15px solid ;
+	color:green  ;
+	height : auto ;
+	overflow : scroll;
+	padding : 5px 10px ;
+}
+
+div{
+height:500px;
+
+
+}
+
+a:link, a:visited {
+	font-size : 15px ;
+  background-color: white;
+  color: green;
+  padding: 10px 2px;
+  margin : 1px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block ;
+  width : 30% ;
+}
+
+a:hover, a:active {
+  color: red;
+}
+
+h1 {
+	outline : 2px solid ;
+color : white ;
+}
+
+p {
+
+text-align : justify ;
+}
+
+ul {
+list-style-type : square;
+line-height: 2em; 
+}

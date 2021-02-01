@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Develop simple Whiteboard project </title>
+<meta name="description" content="Develop simple Whiteboard project using HTML , CSS and Javascript !">
+
+<meta property="og:title" content="Develop simple Whiteboard project" />
+<meta property="og:description" content="Develop simple Whiteboard project using HTML , CSS and Javascript !" />
+<!--
+<meta property="og:image" content="https://ksrgeeks.wordpress.com/uploads/image.png" />
+-->
+<meta name="twitter:card" content="Develop simple Whiteboard project using HTML , CSS and Javascript !">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8"> <!-- for HTML5 -->
+
+<link rel="stylesheet" type="text/css" href="../codingBlocks.css"/>
+<script type="text/javascript" src="../forCodes.js"> </script>
+
+</head>
+<body>
+<h1> Develop simple Whiteboard project </h1>
+<p>
+In this Exercise , We are going to learn developing a simple Whiteboard project . We can use this Whiteboard project for drawing and Teaching purposes .
+</p>
+<h2>Requirements </h2>
+<p>We need any Text editor like Notepad++ for developing this project .</p>
+<h2> How to Start ? </h2>
+<p>We only need two files index.html and whiteboard.js .</p>
+<p>Obiviously file names can be changed but .html and .js extensions are important .</p>
+<h3> index.html file </h3>
+<ul>
+<li>In the index.html file we need an input box to take pencil color code from user and canvas area for drawing .</li>
+<li>Use input tag for using input box . </li>
+<li><div class="inlinecoding" id="div1">
+<xmp><input id="hex" placeholder="Enter Hex Color"> </input></xmp>
+</div>
+
+</li>
+<li>To identify this input box we set the id = "hex" .</li>
+<li>Use canvas tag for using drawing area .</li>
+<li><div class="inlinecoding">
+<xmp><canvas id  ="draw"> </canvas></xmp>
+</div></li>
+<li> To identify canvas , Use id="draw" . </li>
+</ul>
+<p> So finally index.html file looks like : </p>
+
+<div class="coding" id="1" >
+<xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+Whiteboard
+</title>
+<meta name="viewport" content="width=device-width , initial-scale=1">
+<script src="app.js"> </script>
+</head>
+
+<input id="hex" placeholder="Enter Hex Color"> </input>
+<canvas id  ="draw"> </canvas>
+</html>
+</xmp>
+</div>
+
+<br>
+<h2> whiteboard.js file </h2>
+<ul>
+<li>Retrieve the canvas value and store in a variable .
+<div class="inlinecoding"><xmp>var canvas = document.getElementById("draw");</xmp></div> </li>
+<li> Use .getContext() to initiate the canvas context and resize() function to set size of window width and height .
+<div class="inlinecoding"><xmp>var ctx = canvas.getContext("2d") ;
+resize() ;
+
+function resize() {
+ctx.canvas.width = window.innerWidth ;
+ctx.canvas.height =  window.innerHeight ;
+}
+</xmp></div></li>
+<li> Let's set the pencil cursor positions inside canvas . </li>
+<li> Consider the Initial positions of cursor at (0,0) co-ordinates .
+<div class="inlinecoding"><xmp>var pos = {x:0 , y:0} ; </xmp></div> </li>
+<li> Now drawing starts from the position , where mouse is clicked . So , let's use setPosition() function to set the new cursor position .
+<div class="inlinecoding">
+<xmp>
+function setPosition(e) {
+pos.x = e.clientX ;
+pos.y = e.clientY ;
+}
+</xmp></div></li>
+<li>Now drawing will start after mouse click so use draw() to check mouse is clicked or not . Retrieve the color code input , if the mouse is clicked .</br>
+Also set some drawing pencil attributes to make drawing intersting . You can change these attributes as you need .
+<div class="inlinecoding">
+<xmp>
+function draw(e){
+if(e.buttons !==1) return ;
+var color = document.getElementById("hex").value ;
+ctx.beginPath() ;
+ctx.lineWidth = 10 ;
+ctx.lineCap = "round" ;
+ctx.strokeStyle = color ;
+ctx.moveTo(pos.x , pos.y) ;
+setPosition(e) ;
+ctx.lineTo(pos.x , pos.y) ;
+ctx.stroke() ;
+}
+</xmp>
+</div></li>
+<li> Now use .addEventListener("command",functionName) function to call any particular function and applying command to perform action .
+<div class="inlinecoding">
+<xmp>
+window.addEventListener("resize",resize) ;
+document.addEventListener("mousemove",draw) ;
+document.addEventListener("mousedown",setPosition) ;
+document.addEventListener("mouseenter",setPosition) ;
+</xmp>
+</li>
+</ul>
+<p> So finally whiteboard.js file looks like : </p>
+
+<div class="coding">
+<xmp>
+var canvas = document.getElementById("draw");
+var ctx = canvas.getContext("2d") ;
+resize() ;
+
+function resize() {
+ctx.canvas.width = window.innerWidth ;
+ctx.canvas.height =  window.innerHeight ;
+}
+
+var pos = {x:0 , y:0} ;
+
+function setPosition(e) {
+pos.x = e.clientX ;
+pos.y = e.clientY ;
+}
+function draw(e){
+if(e.buttons !==1) return ;
+var color = document.getElementById("hex").value ;
+ctx.beginPath() ;
+
+ctx.lineWidth = 10 ;
+ctx.lineCap = "round" ;
+ctx.strokeStyle = color ;
+ctx.moveTo(pos.x , pos.y) ;
+setPosition(e) ;
+ctx.lineTo(pos.x , pos.y) ;
+ctx.stroke() ;
+}
+
+window.addEventListener("resize",resize) ;
+document.addEventListener("mousemove",draw) ;
+document.addEventListener("mousedown",setPosition) ;
+document.addEventListener("mouseenter",setPosition) ;
+
+
+</xmp>
+</div>
+
+</body>
+</html>
