@@ -54,6 +54,22 @@ body {
   .header-right {
     float: none;
   }
+  .leftcol {
+    width: 100%;
+    height:500px;
+    float:left;
+	overflow : scroll ;
+	resize : horizontal ;
+ }
+ 
+ 
+.rightcol {
+    width:100%;
+    height:500px;
+    float:left;
+	resize : horizontal ;
+ }
+
 }
 .leftcol {
     min-width:20%;
