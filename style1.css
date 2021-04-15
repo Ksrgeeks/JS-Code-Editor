@@ -50,13 +50,14 @@ body {
     display: block;
     text-align: left;
   }
-  
+
   .header-right {
     float: none;
   }
+  
 }
 .leftcol {
-    width:15%;
+    width:30%;
     height:500px;
     float:left;
 	overflow : scroll ;
@@ -64,18 +65,13 @@ body {
  }
  
 .midcol {
-    width:60%;
+    width:70%;
     height:500px;
     float:left;
 	resize : horizontal ;
  }
  
-.rightcol {
-    width:25%;
-    height:500px;
-    float:left;
-	resize : horizontal ;
- }
+
 
 
 table{
