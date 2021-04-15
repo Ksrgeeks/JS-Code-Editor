@@ -2,16 +2,17 @@ body{
 	color : #2E2E2E ;
 	font : 15px ;
 	font-family : verdana ;
-	background : #F6B26B;
+	
 }
 .coding {
 	background : white  ;
 	font : 15px solid ;
-	color:green  ;
+	color:black  ;
 	outline : 3px solid white;
 	height : 250px ;
 	overflow : scroll;
 	padding : 5px 10px ;
+	background : #F6B26B;
 }
 
 .inlinecoding {
@@ -24,21 +25,21 @@ body{
 }
 
 div{
-height:500px;
+height:fit-content ;
 
 
 }
 
 a:link, a:visited {
 	font-size : 15px ;
-  background-color: white;
+
   color: green;
   padding: 10px 2px;
   margin : 1px ;
   text-align: center;
   text-decoration: none;
-  display: inline-block ;
-  width : 30% ;
+  display: block ;
+  
 }
 
 a:hover, a:active {
